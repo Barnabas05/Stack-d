@@ -3,3 +3,7 @@ compatibility_date = "2025-05-12"
 
 [site]
 bucket = "./dist"
+
+[build]
+command = "npm run build"
+cwd = "./"
