@@ -1,0 +1,5 @@
+name = "stack-d"
+compatibility_date = "2025-05-12"
+
+[site]
+bucket = "./dist"
