@@ -53,17 +53,94 @@
     </div>
   </nav>
 
+  <main class="flex-grow-1">
+
+    <!-- About -->
+    <section id="about" class="section-custom bg-white text-dark">
+      <div class="container">
+        <h2 class="section-title text-center text-gradient">About Stack'd</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <p class="lead text-center">
+              Stack'd began as a late-night idea between two friends with a shared obsession: the perfect burger. What
+              started as a food truck in 2018 quickly exploded into a local sensation.
+            </p>
+            <p class="text-center">
+              With handcrafted patties, bold sauces, and flavors from around the globe, we set out to redefine what fast
+              food could be. Every Stack'd burger is a celebration of creativity, quality, and pure indulgence. Whether
+              you’re grabbing lunch, ordering late-night delivery, or applying to join our crew — we’re always stacking
+              things your way.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Food Menu -->
+    <section id="menu" class="section-custom bg-light">
+      <div class="container">
+        <h2 class="section-title text-center text-gradient">Our Signature Stack'd</h2>
+        <div class="row g-4" id="menuCards">
+          <!-- Kártyák ide generálódnak JavaScripttel -->
+        </div>
+      </div>
+    </section>
 
 
 
+    <!-- Delivery -->
+    <section id="delivery" class="section-custom bg-light text-dark">
+      <div class="container">
+        <h2 class="section-title text-center">Delivery</h2>
+        <p class="lead text-center">We deliver across Budapest within 45 minutes – fast, safe, and reliable.</p>
+        <ul class="list-unstyled text-center fade-in">
+          <li>✔️ Free delivery over 6 000 Ft</li>
+          <li>✔️ Online payment or card/cash</li>
+          <li>✔️ Zero-contact delivery available</li>
+        </ul>
+      </div>
+    </section>
 
+    <!-- Career -->
+    <section id="career" class="section-custom bg-dark text-light">
+      <div class="container">
+        <h2 class="section-title text-center text-gradient">Join Our Team</h2>
+        <p class="text-center mb-4">We're looking for enthusiastic team players!</p>
 
+        <form id="careerForm" class="mx-auto" style="max-width: 600px;">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" placeholder="John Doe" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" required />
+          </div>
+          <div class="mb-3">
+            <label for="position" class="form-label">Position</label>
+            <select class="form-select" id="position" required>
+              <option value="">Select one...</option>
+              <option value="driver">Delivery Driver</option>
+              <option value="kitchen">Kitchen Assistant</option>
+              <option value="developer">Frontend Developer</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Why do you want to work with us?</label>
+            <textarea class="form-control" id="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100 glow">Submit Application</button>
+          <div id="careerSuccess" class="alert alert-success mt-3 d-none" role="alert">
+            Thanks! We’ll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </section>
 
+  </main>
 
-
-
-
-
+  
   <footer class="bg-dark text-light py-4 mt-auto">
     <div class="container">
       <div class="row align-items-start">
