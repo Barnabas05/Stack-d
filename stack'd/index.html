@@ -15,53 +15,52 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid position-relative">
+  <nav class="navbar navbar-dark bg-dark py-2">
+    <div class="container-fluid d-flex justify-content-between align-items-center position-relative">
 
-      <!-- Left logo -->
-      <a class="navbar-brand" href="#">
-        <img src="./public/logo.png" alt="Stack'd Logo" height="40" />
+      <!-- Bal oldali logo -->
+      <a class="navbar-brand m-0" href="#">
+        <img src="./public/logo.png" alt="Stack'd Logo" height="40">
       </a>
 
-      <!-- Centered brand name -->
-      <div class="position-absolute top-50 start-50 translate-middle">
-        <a href="index.html" class="text-white fw-bold text-decoration-none" style="font-size: 35px;">Stack'd</a>
+      <!-- Középső Stack'd felirat -->
+      <div class="navbar-title position-absolute top-50 start-50 translate-middle">
+        <a href="index.html" class="text-white fw-bold text-decoration-none fs-4">Stack'd</a>
       </div>
 
-      <!-- Toggler button -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- Jobb oldali hamburger -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+    </div>
 
-      <!-- Right-side menu -->
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
-          <li class="nav-item me-2">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item me-2">
-            <a class="nav-link active" href="#menu">Menu</a>
-          </li>
-          <li class="nav-item me-2">
-            <a class="nav-link" href="#delivery">Delivery</a>
-          </li>
-          <li class="nav-item me-2">
-            <a class="nav-link" href="#career">Career</a>
-          </li>
-          <li class="nav-item me-2">
-            <a class="nav-link" href="#cart">
-              <img src="cart.png" alt="Cart" style="width: 40px; cursor: pointer;" data-bs-toggle="modal"
-                data-bs-target="#cartModal">
-
-
-            </a>
-          </li>
-        </ul>
-      </div>
-
+    <!-- Menüpontok -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav text-center w-100 my-3">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#menu">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#delivery">Delivery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#career">Career</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#cart">
+            <img src="cart.png" alt="Cart" style="width: 40px; cursor: pointer;" data-bs-toggle="modal"
+              data-bs-target="#cartModal">
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
+
 
   <main class="flex-grow-1">
 

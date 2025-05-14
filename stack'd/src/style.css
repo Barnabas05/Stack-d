@@ -2,6 +2,50 @@
   color: #fff;
 }
 
+.navbar-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar-center-brand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-center-brand {
+    font-size: 24px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .navbar-collapse {
+    text-align: center;
+    padding-top: 1rem;
+  }
+}
+
+.navbar-title {
+  z-index: 10;
+}
+
+@media (min-width: 992px) {
+  .navbar-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
+
 .navbar-dark .nav-item .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
