@@ -24,7 +24,7 @@ document.getElementById("careerForm").addEventListener("submit", function (e) {
   const position = document.getElementById("position");
   const message = document.getElementById("message");
   const success = document.getElementById("careerSuccess");
-
+  
   if (name.value && email.value && position.value && message.value) {
     success.classList.remove("d-none");
     this.reset();
@@ -88,13 +88,6 @@ const foodItems = [
   }
 ];
 
-const cart = [];
-
-function addToCart(item) {
-  cart.push(item);
-  console.log(`🛒 Added to cart: ${item.name} – $${item.price.toFixed(2)}`);
-  alert(`${item.name} added to cart!`);
-}
 
 const menuContainer = document.getElementById("menuCards");
 
@@ -113,4 +106,47 @@ foodItems.forEach(item => {
   card.querySelector('.add-to-cart').addEventListener('click', () => addToCart(item));
   menuContainer.appendChild(card);
 });
+
+const cart = [];
+function addToCart(item) {
+  cart.push(item);
+  renderCart();
+
+}
+
+function renderCart() {
+  const cartItemsContainer = document.getElementById("cartItems");
+  const cartTotalElement = document.getElementById("cartTotal");
+
+  cartItemsContainer.innerHTML = "";
+
+  let total = 0;
+  cart.forEach((item, index) => {
+    total += item.price;
+
+    const itemDiv = document.createElement("div");
+    itemDiv.classList.add("d-flex", "justify-content-between", "border-bottom", "py-2");
+    itemDiv.innerHTML = `
+      <span>${item.name}</span>
+      <span>$${item.price.toFixed(2)}</span>
+    `;
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Remove";
+    removeButton.classList.add("btn", "btn-danger", "btn-sm", "remove-item");
+    removeButton.setAttribute("data-index", index);
+    removeButton.addEventListener("click", () => {
+      cart.splice(index, 1);
+      renderCart();
+    });
+    itemDiv.appendChild(removeButton);
+    cartItemsContainer.appendChild(itemDiv);
+  });
+
+  cartTotalElement.textContent = total.toFixed(2);
+}
+
+
+
+
+
 
