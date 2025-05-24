@@ -107,11 +107,16 @@ foodItems.forEach(item => {
   menuContainer.appendChild(card);
 });
 
-const cart = [];
+const cart = JSON.parse(localStorage.getItem("stackd-cart")) || [];
 function addToCart(item) {
-  cart.push(item);
+  const existingItem = cart.find(i => i.name === item.name);
+  if (existingItem) {
+    existingItem.qty = (existingItem.qty || 1) + 1;
+  } else {
+    cart.push({ ...item, qty: 1 });
+  }
+  localStorage.setItem("stackd-cart", JSON.stringify(cart));
   renderCart();
-
 }
 
 function renderCart() {
@@ -119,25 +124,28 @@ function renderCart() {
   const cartTotalElement = document.getElementById("cartTotal");
 
   cartItemsContainer.innerHTML = "";
-
   let total = 0;
+
   cart.forEach((item, index) => {
-    total += item.price;
+    const qty = item.qty || 1;
+    total += item.price * qty;
 
     const itemDiv = document.createElement("div");
     itemDiv.classList.add("d-flex", "justify-content-between", "border-bottom", "py-2");
     itemDiv.innerHTML = `
-      <span>${item.name}</span>
-      <span>$${item.price.toFixed(2)}</span>
+      <span>${item.name} x${qty}</span>
+      <span>$${(item.price * qty).toFixed(2)}</span>
     `;
+
     const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
     removeButton.classList.add("btn", "btn-danger", "btn-sm", "remove-item");
-    removeButton.setAttribute("data-index", index);
     removeButton.addEventListener("click", () => {
       cart.splice(index, 1);
+      localStorage.setItem("stackd-cart", JSON.stringify(cart));
       renderCart();
     });
+
     itemDiv.appendChild(removeButton);
     cartItemsContainer.appendChild(itemDiv);
   });
