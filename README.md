@@ -69,7 +69,7 @@ npx wrangler pages deploy dist --project-name=stack-d
 Lokális fejlesztés
   1. Klónozd a repót: <br>
   ```
-git clone https://github.com/felhasznalo/stackd.git
+git clone https://github.com/Barnabas05/stackd.git
 cd stackd
 ```
   2. Telepítsd a szükséges függőségeket (ha van package.json): <br>
